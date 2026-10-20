@@ -19,7 +19,6 @@ def main():
 
         if scelta == "1":
             nuovo_nome = input("Inserisci il nuovo nome del centro fieristico: ")
-            nuovo_nome = input("Inserisci il nuovo nome del centro fieristico: ")
             lingotto.nome = nuovo_nome
             print(f"Nome aggiornato: {lingotto.nome}")
 
