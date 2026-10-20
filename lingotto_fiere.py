@@ -1,7 +1,7 @@
 from espositore import Espositore
 from stand import Stand
 from StandSpeciali import StandPresaExtra, StandPremium
-
+from operator import attrgetter
 
 class LingottoFiere:
     def __init__(self, nome):
@@ -86,12 +86,9 @@ class LingottoFiere:
 
     def elenca_espositori(self):
         """Stampa l'elenco degli espositori mostrando, per ognuno, lo stand a cui è associato, quando applicabile """
-        if not self.espositori:
-            print("Nessun espositore presente.")
-            return
-
-        for e in self.espositori:
-            print(e)
+        for codice in self.espositori:
+            espositore = self.espositori[codice]
+            print(f"{espositore}")
     def stand_ordinati_per_prezzo(self):
         """Restituisce la lista ordinata degli stand in base al prezzo"""
-        return sorted(self.stand)
+        return sorted(self.stand.values(),key=attrgetter('prezzo_base'))
