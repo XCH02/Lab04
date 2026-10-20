@@ -91,4 +91,4 @@ class LingottoFiere:
             print(f"{espositore}")
     def stand_ordinati_per_prezzo(self):
         """Restituisce la lista ordinata degli stand in base al prezzo"""
-        return sorted(self.stand.values(),key=attrgetter('prezzo_base'))
+        return sorted(self.stand.values(),key=attrgetter('prezzo_finale'))
